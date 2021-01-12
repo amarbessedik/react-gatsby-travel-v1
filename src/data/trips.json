@@ -1,0 +1,26 @@
+[
+    {
+        "img":"../assets/images/travel-1.jpg",
+        "alt":"Statue Of Liberty",
+        "name": "Statue Of Liberty",
+        "button": "View Destination"
+    },
+    {
+        "img":"../assets/images/travel-2.jpg",
+        "alt":"Burdj Khalifa",
+        "name": "Burdj Khalifa",
+        "button": "View Destination"
+    },
+    {
+        "img":"../assets/images/travel-3.jpg",
+        "alt":"Tokyo",
+        "name": "Tokyo",
+        "button": "View Destination"
+    },
+    {
+        "img":"../assets/images/travel-4.jpg",
+        "alt":"Eiffel Tower",
+        "name": "Eiffel Tower",
+        "button": "View Destination"
+    }
+]
