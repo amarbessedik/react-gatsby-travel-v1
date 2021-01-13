@@ -3,16 +3,16 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { IoMdCheckmarkCircleOutline } from "react-icons/io"
 import { FaRegLightbulb } from "react-icons/fa"
-import { GiFlexibleStar } from "react-icons/gi"
+// import { GiFlexibleStar } from "react-icons/gi"
 import { graphql, useStaticQuery } from "gatsby"
 
-const Testimenials = () => {
+const Testimonials = () => {
   const data = useStaticQuery(graphql`
     query MyQuery {
       allFile(
         filter: {
           ext: { regex: "/(jpg)|(png)|(jpeg)/" }
-          name: { in: ["testimenial-1", "testimenial-2", "testimenial-3"] }
+          name: { in: ["testimonial-2", "testimonial-3"] }
         }
       ) {
         edges {
@@ -29,12 +29,12 @@ const Testimenials = () => {
   `)
 
   return (
-    <TestimenialsContainer>
-      <TopLine>Testimenials</TopLine>
+    <TestimonialsContainer>
+      <TopLine>Testimonials</TopLine>
       <Description>What people are saying</Description>
       <ContentWrapper>
         <ColumnOne>
-          <Testimenial>
+          <Testimonial>
             <IoMdCheckmarkCircleOutline
               css={`
                 color: #3fffa8;
@@ -48,8 +48,8 @@ const Testimenials = () => {
               the mountains and they made it super easy to book my trip and
               accomodation."
             </p>
-          </Testimenial>
-          <Testimenial>
+          </Testimonial>
+          <Testimonial>
             <FaRegLightbulb
               css={`
                 color: #f9b19b;
@@ -63,18 +63,7 @@ const Testimenials = () => {
               right away and gave me the best price out of all the companies
               researched."
             </p>
-          </Testimenial>
-          <Testimenial>
-            <GiFlexibleStar
-              css={`
-                color: #bb0000;
-                font-size: 2rem;
-                margin-bottom: 1rem;
-              `}
-            />
-            <h3>Ted Nice</h3>
-            <p>"Great experience. I gonna do this again next year."</p>
-          </Testimenial>
+          </Testimonial>
         </ColumnOne>
         <ColumnTwo>
           {data.allFile.edges.map((image, key) => (
@@ -82,13 +71,13 @@ const Testimenials = () => {
           ))}
         </ColumnTwo>
       </ContentWrapper>
-    </TestimenialsContainer>
+    </TestimonialsContainer>
   )
 }
 
-export default Testimenials
+export default Testimonials
 
-const TestimenialsContainer = styled.div`
+const TestimonialsContainer = styled.div`
   width: 100%;
   background: #fcfcfc;
   color: #000;
@@ -96,17 +85,19 @@ const TestimenialsContainer = styled.div`
   height: 100%;
 `
 const TopLine = styled.p`
-  color: #077bf1;
-  font-size: 1rem;
+  /* color: #077bf1; */
+  font-size: 5rem;
   padding-left: 2rem;
   margin-bottom: 0.75rem;
+  font-weight: 200;
+  text-align: center;
 `
 const Description = styled.p`
-  text-align: start;
-  padding: 2rem;
-  margin-bottom: 4rem;
+  text-align: center;
+  padding: 3rem;
+  margin-bottom: 1rem;
   font-size: clamp(1.5rem, 5vw, 2rem);
-  font-weight: bold;
+  font-weight: 200;
 `
 const ContentWrapper = styled.div`
   display: grid;
@@ -119,18 +110,18 @@ const ContentWrapper = styled.div`
 `
 const ColumnOne = styled.div`
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
 
-  @media screen and (max-width: 900px) {
-    grid-template-columns: 1fr;
+  @media screen and (max-width: 768px) {
+    grid-template-rows: 1fr;
   }
 `
-const Testimenial = styled.div`
+const Testimonial = styled.div`
   padding-left: 1rem;
   padding-right: 2rem;
 
   h3 {
-    margin-bottom: 1rem;
+    /* margin-bottom: .5rem; */
     font-size: 1.5rem;
     font-style: italic;
     font-weight: 200;
@@ -138,20 +129,25 @@ const Testimenial = styled.div`
   }
   p {
     color: #3b3b3b;
+    margin-bottom: 1.5rem
   }
 `
 const ColumnTwo = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   margin-top: 2rem;
-  grid-gap: 10px;
+  grid-gap: 20px;
 
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
+    min-height: 1000px;
   }
 `
-
 const Image = styled(Img)`
   border-radius: 10px;
-  height: 100%;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
 `
