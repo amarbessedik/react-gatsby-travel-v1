@@ -2,6 +2,7 @@ import React from "react"
 import Hero from "../components/Hero"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Testimenials from "../components/Testimenials"
 import Trips from "../components/Trips"
 
 const IndexPage = () => (
@@ -9,6 +10,7 @@ const IndexPage = () => (
     <SEO title="Home" />
     <Hero />
     <Trips heading='Our Favorite Destinations'/>
+    <Testimenials />
   </Layout>
 )
 
