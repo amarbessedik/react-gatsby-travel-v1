@@ -1,26 +1,26 @@
 [
     {
-        "img":"../assets/images/travel-1.jpg",
+        "img":"../images/travel-1.jpg",
         "alt":"Statue Of Liberty",
-        "name": "Statue Of Liberty",
+        "name": "New York",
         "button": "View Destination"
     },
     {
-        "img":"../assets/images/travel-2.jpg",
+        "img":"../images/travel-2.jpg",
         "alt":"Burdj Khalifa",
-        "name": "Burdj Khalifa",
+        "name": "Dubai",
         "button": "View Destination"
     },
     {
-        "img":"../assets/images/travel-3.jpg",
+        "img":"../images/travel-3.jpg",
         "alt":"Tokyo",
         "name": "Tokyo",
         "button": "View Destination"
     },
     {
-        "img":"../assets/images/travel-4.jpg",
+        "img":"../images/travel-4.jpg",
         "alt":"Eiffel Tower",
-        "name": "Eiffel Tower",
+        "name": "Paris",
         "button": "View Destination"
     }
 ]
