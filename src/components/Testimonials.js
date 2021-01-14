@@ -86,7 +86,7 @@ const TestimonialsContainer = styled.div`
 `
 const TopLine = styled.p`
   /* color: #077bf1; */
-  font-size: 5rem;
+  font-size: 4rem;
   padding-left: 2rem;
   margin-bottom: 0.75rem;
   font-weight: 200;
