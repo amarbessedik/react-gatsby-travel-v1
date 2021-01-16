@@ -71,14 +71,12 @@ const VideoBg = styled.video`
   object-fit: cover;
 
 `
-
 const HeroContent = styled.div`
   z-index: 3;
   height: calc(100vh - 80px);
   max-height: 100%;
   padding: 0rem calc((100vw - 1300px) / 2);
 `
-
 const HeroItems = styled.div`
   display: flex;
   flex-direction: column;
@@ -92,7 +90,6 @@ const HeroItems = styled.div`
   line-height: 1.2;
   /* font-weight: bold; */
 `
-
 const HeroH1 = styled.h1`
   font-weight: 200;
   font-size: clamp(1.5rem, 6vw, 4rem);
@@ -100,7 +97,6 @@ const HeroH1 = styled.h1`
   letter-spacing: 3px;
   padding: 0 1rem;
 `
-
 const HeroP = styled.p`
   font-size: clamp(1rem, 3vw, 2rem);
   margin-bottom: 2rem;

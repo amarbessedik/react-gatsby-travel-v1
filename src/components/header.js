@@ -37,7 +37,7 @@ const Header = () => {
       {open && (
         <MobileMenu>
           {menuData.map((item, index) => (
-            <NavLink key={index} to={item.link}>
+            <NavLink key={index} to={item.link} onClick={() => setOpen(false)}>
               <span>{item.title}</span>
             </NavLink>
           ))}
@@ -95,8 +95,18 @@ const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%auto;
   cursor: pointer;
-`
 
+  span {
+    display: block;
+    padding: 10px;
+
+    &:hover {
+      text-align: center;
+      width: 100vw;
+      background: rgba(0,0,0, 0.2);
+    }
+  }
+`
 const Bars = styled(FaBars)`
   display: none;
   color: #fff;
