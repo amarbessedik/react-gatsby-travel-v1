@@ -1,34 +1,85 @@
-import React from "react"
+import React, { Fragment, useState } from "react"
 import { Link } from "gatsby"
-import styled from 'styled-components'
-import { FaBars } from 'react-icons/fa'
-import { menuData } from '../data/MenuData'
-import {Button} from './Button'
+import styled from "styled-components"
+import { FaBars } from "react-icons/fa"
+import { menuData } from "../data/MenuData"
+import { Button } from "./Button"
 
 const Header = () => {
+  const [open, setOpen] = useState(false)
+
+  const handleClick = () => {
+    setOpen(!open)
+  }
+
+  if (window.innerWidth > 769) {
+    setOpen(false)
+  }
+
   return (
     <Nav>
-      <NavLink to='/'>Explorer</NavLink>
-      <Bars />
-      <NavMenu>
-        {menuData.map((item, index) =>(
-          <NavLink key={index} to={item.link}>
-            {item.title}
-          </NavLink>
-        ))}
-      </NavMenu>
-      <NavBtn>
-        <Button primary='true' round='true' to='/trips'>Book a Flight</Button>
-      </NavBtn>
+      <NavLink to="/">Explorer</NavLink>
+      <Bars onClick={handleClick} />
+      <Fragment>
+        <NavMenu>
+          {menuData.map((item, index) => (
+            <NavLink key={index} to={item.link}>
+              {item.title}
+            </NavLink>
+          ))}
+        </NavMenu>
+        <NavBtn>
+          <Button primary="true" round="true" to="/trips">
+            Book a Flight
+          </Button>
+        </NavBtn>
+      </Fragment>
+      {open && (
+        <MobileMenu>
+          {menuData.map((item, index) => (
+            <NavLink key={index} to={item.link}>
+              <span>{item.title}</span>
+            </NavLink>
+          ))}
+        </MobileMenu>
+      )}
     </Nav>
   )
 }
 
 export default Header
 
+const MobileMenu = styled.div`
+  background: #542c85;
+  /* background: #56abdb; */
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 75px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  span {
+    display: block;
+    margin: 25px auto;
+    &:hover {
+      color: #f26a2e;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+`
 const Nav = styled.nav`
-  /* background: #542C85; */
-  background: transparent;
+  background: #542c85;
+  /* background: transparent; */
+  border-bottom: 5px solid #f26a2e;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -50,7 +101,7 @@ const Bars = styled(FaBars)`
   display: none;
   color: #fff;
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     display: block;
     position: absolute;
     top: 0;
@@ -65,7 +116,7 @@ const NavMenu = styled.div`
   align-items: center;
   margin-right: -48px;
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     display: none;
   }
 `
@@ -75,8 +126,7 @@ const NavBtn = styled.div`
   align-items: center;
   margin-right: 24px;
 
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     display: none;
   }
-`;
-
+`

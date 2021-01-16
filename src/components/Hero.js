@@ -53,7 +53,6 @@ const HeroContainer = styled.div`
     ); */
   }
 `
-
 const HeroBg = styled.div`
   position: absolute;
   top: 0;
@@ -64,12 +63,13 @@ const HeroBg = styled.div`
   height: 100%;
   overflow: hidden;
 `
-
 const VideoBg = styled.video`
   width: 100%;
   height: 100%;
+  margin-top: 80px;
   -o-object-fit: cover;
   object-fit: cover;
+
 `
 
 const HeroContent = styled.div`
